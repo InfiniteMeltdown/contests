@@ -149,7 +149,8 @@ fig, ax = plt.subplots(figsize=(10, 7))
 # ax.set_yticks(np.arange(0, 100, 1))
 ax.set_xlabel("latency")
 ax.set_ylabel("coco_t2i_r@1")
-# ax.set_xscale("log")
+ax.set_xscale("log")
+ax.set_xticks([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80])
 # ax.set_ylim(10, 80)
 
 for i, k in enumerate(table):
@@ -157,8 +158,8 @@ for i, k in enumerate(table):
     # ax.scatter(i, table[k][1])
     ax.annotate(k, table[k], size=10, textcoords="offset pixels", xytext=(10, 0))
 
-ax.hlines(63, 0, 50, 'red')
-ax.annotate("BLIP", (25, 63))
+# ax.hlines(63, 0, 50, 'red')
+# ax.annotate("BLIP", (25, 63))
 ax.grid()
 plt.show()
 
